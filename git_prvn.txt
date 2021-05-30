@@ -1,0 +1,201 @@
+
+Theory explanation:
+--------------------
+
+Git 
+- Distributed version control management
+
+SCM 
+- software control management or source control management
+
+CVCS 
+- Centralized Version Control System
+
+DVCS
+- Distributed Version Control System
+
+Repository is where we have all the code in a single place.
+
+Difference between CVCS and DVCS
+In CVCS, if the repository system is crashed, then we will lose all the data.
+where as in DVCS, every dev system has a local repository and the central machine has remote repository. If any time the remote repository system is crashed, we can upgrade the data from the local repository.
+
+Trunk Based Development
+
+Implementations of Git
+- GitHub 
+- Gitlab
+- Bit Bucket
+
+First you have to create a central repository
+after that we should create a local repository and start working on it.
+
+1. Creating Central Repository:
+YOu have to open the https://github.com/ website, create an account and create the repository
+i have created the 'prvnTechGuide' central repository.
+
+
+2. Creating the local repository:
+Create one folder, right click on that folder select the 'Git Bash here', you can see the command line screen.
+i) there you can give the 'git init' command , which will create the local repository.
+>git init 
+
+ii) you need to link the local repository with the central repository by using the "git remote add origin "https:\\github.com\praveeng728/prvnTechGuide.git"
+>git remote add origin "https://github.com/praveeng728/prvnTechGuide.git"
+
+iii) now we need to fetch the code from central repository to local using the 'git pull origin master'
+>git pull origin master 
+
+
+
+Runtime notes:
+---------------
+ivy4423@IN01N01044 MINGW64 /c/Praveen/Latest_July14_2020/Material/Git_projects
+$ git init
+Initialized empty Git repository in C:/Praveen/Latest_July14_2020/Material/Git_projects/.git/
+
+ivy4423@IN01N01044 MINGW64 /c/Praveen/Latest_July14_2020/Material/Git_projects (master)
+$ git remote add origin "https://github.com/praveeng728/prvnTechGuide.git"
+
+ivy4423@IN01N01044 MINGW64 /c/Praveen/Latest_July14_2020/Material/Git_projects (master)
+$ git pull origin master
+remote: Enumerating objects: 17, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 17 (delta 0), reused 0 (delta 0), pack-reused 14
+Unpacking objects: 100% (17/17), 3.37 MiB | 2.02 MiB/s, done.
+From https://github.com/praveeng728/prvnTechGuide
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+
+ivy4423@IN01N01044 MINGW64 /c/Praveen/Latest_July14_2020/Material/Git_projects (master)
+
+
+
+========================================================================================================================
+========================================================================================================================
+Practical notes:
+
+
+-- configuring the user name and mail id
+
+C:\Praveen\Latest_July14_2020\Material\Python\python_work>git config --global user.name "praveeng728"
+C:\Praveen\Latest_July14_2020\Material\Python\python_work>git config --global user.email "praveeng.moto@gmail.com"
+
+
+-- installing git
+https://gitforwindows.org/
+
+-- initializing the git project:
+
+C:\Praveen\Latest_July14_2020\Material\Python\python_work>git init
+Initialized empty Git repository in C:/Praveen/Latest_July14_2020/Material/Python/python_work/.git/
+
+
+-- ignoring the files from the current folder:
+create a file as ".gitignore"
+add list of the files into this 
+ex: the below line is added in python_work folder. Since all the generated files are saved in this folder and which is not required to commit.
+__pycache__/
+
+-- checking the status
+C:\Praveen\Latest_July14_2020\Material\Python\python_work>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        divisonByErr.py
+        fileEx1.py
+        helloWorld.py
+        jsonFile.py
+        mongoEx1.py
+        mynew.txt
+        pizza.py
+        rect1.py
+        users.json
+
+nothing added to commit but untracked files present (use "git add" to track)
+>
+
+
+-- adding the files to repository:
+C:\Praveen\Latest_July14_2020\Material\Python\python_work>git add .
+
+C:\Praveen\Latest_July14_2020\Material\Python\python_work>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   divisonByErr.py
+        new file:   fileEx1.py
+        new file:   helloWorld.py
+        new file:   jsonFile.py
+        new file:   mongoEx1.py
+        new file:   mynew.txt
+        new file:   pizza.py
+        new file:   rect1.py
+        new file:   users.json
+
+
+
+-- committing the files into git
+C:\Praveen\Latest_July14_2020\Material\Python\python_work>git commit -m "pyhton practice examples"
+[master (root-commit) 47b2eab] pyhton practice examples
+ Committer: Praveen Kumar Ganji <IVY4423@icepor.com>
+Your name and email address were configured automatically based on your username and hostname. Please check that they are accurate. You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 10 files changed, 230 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 divisonByErr.py
+ create mode 100644 fileEx1.py
+ create mode 100644 helloWorld.py
+ create mode 100644 jsonFile.py
+ create mode 100644 mongoEx1.py
+ create mode 100644 mynew.txt
+ create mode 100644 pizza.py
+ create mode 100644 rect1.py
+ create mode 100644 users.json
+
+
+
+-- configuring the user name and mail id
+if you missed to configure the user name and mail id then you can see the below message
+"Your name and email address were configured automatically"
+
+set the below values
+C:\Praveen\Latest_July14_2020\Material\Python\python_work>git config --global user.name "praveeng728"
+C:\Praveen\Latest_July14_2020\Material\Python\python_work>git config --global user.email "praveeng.moto@gmail.com"
+
+-- committing the existing file author name changes
+git commit --amend --reset-author
+it will prompt another linux editor where it will show list of all the files
+you can give the commit comment and uncomment the files for which you need to change the author name.
+type wq and enter, it will the author and mail id changes to git
+
+git commit --amend --author="praveeng.moto@gmail.com"
+
+
+-- checking the log
+>git log
+
+-- reverting the last commit changes
+>git checkout .
+
+-- commiting the modified files
+git commit -am "my new changes"
+
+-- adding the new files
+>git add .
